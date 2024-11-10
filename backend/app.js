@@ -25,6 +25,6 @@ app.get('/Get/:id', (req, res) => {
     }).then(result => res.json({result: result})).catch(err => {console.log(err); res.json({message: 'Не успешно'})})
 })
 
-app.listen(8000, () => {
+app.listen(5000, () => {
     console.log('Успешно');
 });
