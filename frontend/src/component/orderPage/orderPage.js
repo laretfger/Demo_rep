@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function OrderPage() {
     const [orders, setOrders] = useState([]);
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => { 
         console.log(123);
@@ -50,27 +50,28 @@ function OrderPage() {
     return (
         <>
             <button onClick={apiGetAll}>Получить все заявки</button><br/>
-            <Link to="/CreatePage" className="el">Создать заявку</Link>
+            <Link to="/CreatePage" className="el">Создать заявку</Link><br/>
             {!(typeof orders === undefined) || orders != [] ? (
                 <table>
                     <tr>
+                        <th>id</th>
                         <th>equipment</th>
                         <th>type_of_fault</th>
                         <th>description_problem</th>
                         <th>client</th>
                         <th>status</th>
-                        <th>status_update</th>
                         <th>master</th>
                         <th>date</th>
                         <th>Редактирование</th>
-                        <th>Удаление</th>
                     </tr>
                     {orders.map(elem => 
+                        
                         <tr>
+                            {/* {delete elem.id} */}
                             {Object.values(elem).map(el => 
                                  <td>{el}</td> 
                             )}
-                            {/* <td><button onClick={() => navigate('UpdateOrder', { state: { id: elem.id } })} >Редактировать</button></td> */}
+                            <td><button onClick={() => navigate('UpdateOrder', { state: { id: elem.id } })} >Редактировать</button></td>
                         </tr>
                     )}
                 </table>
