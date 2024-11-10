@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './component/header/header.js';
 import OrderPage from './component/orderPage/orderPage.js';
+import CreatePage from './component/createPage/createPage.js';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,8 +10,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<OrderPage />} />
-        {/* <Route path="/CreatePage" element={<CreatePage />} />
-        <Route path="/UpdateOrder" element={<UpdateOrder />} /> */}
+        <Route path="/CreatePage" element={<CreatePage />} />
+        {/* <Route path="/UpdateOrder" element={<UpdateOrder />} /> */}
       </Routes>
     </>
   );
